@@ -1,3 +1,7 @@
+**此 package 为https://github.com/ant-design/ant-design/pull/15199 所创建。添加了 datepicker 组件的 rendersidebar 支持。**
+
+**目前 antd 官方还未 merge 这个 PR，当官方合并了 PR 后，此项目将归档。**
+
 <p align="center">
   <a href="http://ant.design">
     <img width="200" src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg">
