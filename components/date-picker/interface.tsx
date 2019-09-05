@@ -33,6 +33,7 @@ export interface SinglePickerProps {
   placeholder?: string;
   renderExtraFooter?: (mode: DatePickerMode) => React.ReactNode;
   onChange?: (date: moment.Moment | null, dateString: string) => void;
+  renderSidebar?: () => React.ReactNode;
 }
 
 const DatePickerModes = tuple('time', 'date', 'month', 'year', 'decade');
@@ -56,7 +57,7 @@ export interface DatePickerProps extends PickerProps, SinglePickerProps {
 }
 
 export interface MonthPickerProps extends PickerProps, SinglePickerProps {
-  monthCellContentRender?: (date: moment.Moment, locale: any) => React.ReactNode
+  monthCellContentRender?: (date: moment.Moment, locale: any) => React.ReactNode;
 }
 
 export type RangePickerValue =
@@ -92,6 +93,7 @@ export interface RangePickerProps extends PickerProps {
   };
   onPanelChange?: (value?: RangePickerValue, mode?: string | string[]) => void;
   renderExtraFooter?: () => React.ReactNode;
+  renderSidebar?: () => React.ReactNode;
 }
 
 export interface WeekPickerProps extends PickerProps, SinglePickerProps {

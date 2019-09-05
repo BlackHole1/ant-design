@@ -308,6 +308,7 @@ class RangePicker extends React.Component<any, RangePickerState> {
     const calendarClassName = classNames({
       [`${prefixCls}-time`]: showTime,
       [`${prefixCls}-range-with-ranges`]: ranges,
+      [`${prefixCls}-has-sidebar`]: props.renderSidebar,
     });
 
     // 需要选择时间时，点击 ok 时才触发 onChange
@@ -324,6 +325,13 @@ class RangePicker extends React.Component<any, RangePickerState> {
     }
     if ('mode' in props) {
       calendarProps.mode = props.mode;
+    }
+    if (props.renderSidebar) {
+      calendarProps.renderSidebar = () => (
+        <div key="sidebar" className={`${prefixCls}-sidebar`}>
+          {props.renderSidebar()}
+        </div>
+      );
     }
 
     const startPlaceholder =

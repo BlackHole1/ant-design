@@ -148,6 +148,7 @@ export default function createPicker(TheCalendar: React.ComponentClass): any {
       const calendarClassName = classNames({
         [`${prefixCls}-time`]: props.showTime,
         [`${prefixCls}-month`]: MonthCalendar === TheCalendar,
+        [`${prefixCls}-has-sidebar`]: props.renderSidebar,
       });
 
       if (value && localeCode) {
@@ -170,6 +171,13 @@ export default function createPicker(TheCalendar: React.ComponentClass): any {
       }
       if ('mode' in props) {
         calendarProps.mode = props.mode;
+      }
+      if (props.renderSidebar) {
+        calendarProps.renderSidebar = () => (
+          <div key="sidebar" className={`${prefixCls}-sidebar`}>
+            {props.renderSidebar()}
+          </div>
+        );
       }
 
       warning(
